@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Agent Builder Flow</title>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </head>
+  <body>
+    <h2>AI Agent Builder Flow</h2>
+    <div class="mermaid">
+flowchart TD
+    A[Visit "Launch Your Agent" Page] --> B{Choose Path}
+    B -->|I have my own agent| C[Go to BYOA Portal Form]
+    B -->|I don't have an agent yet| D[Open Agent Config Tool]
+    C --> E[Submit: GitHub, Demo, Specs, Roadmap]
+    D --> F[Build Agent via Template: Choose task, tools, interface]
+    F --> G[Submit Light Application Form: Use Case, Config Summary]
+    E --> H{Review}
+    G --> H
+    H -->|Program Team| I1[Review Market Fit]
+    H -->|AI Team / coreAgent| I2[Review Technical Readiness]
+    I1 --> J[Portal: Pre-TGE Checklist]
+    I2 --> J
+    J --> K{Live or Async Review}
+    K -->|Live (coreAgent)| L[AI Evaluation]
+    K -->|Async (Program)| M[Manual Review]
+    L --> N{Decision}
+    M --> N
+    N -->|Approved| O[Launchpad Prep: Metadata + Tokenomics]
+    N -->|Rejected| P[End - Feedback Shared]
+    </div>
+  </body>
+</html>
